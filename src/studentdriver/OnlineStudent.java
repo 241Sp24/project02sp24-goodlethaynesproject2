@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package studentdriver;
 
-/**
- *
- * @author S559483
- */
-public class OnlineStudent {
+public class OnlineStudent extends StudentFees {
 
+    private int noOfMonths;
+    private double MONTHLY_FEE = 1245.25;
+
+    public
 }
