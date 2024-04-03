@@ -32,7 +32,8 @@ public class UGStudent extends StudentFees {
     
     public double getPayableAmount(){
         int coursesNum = getCoursesEnrolled();
-        return coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE();
+        double coursesFee = coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE() + ADDITIONAL_FEE;
+        return coursesFee - getScholarshipAmount();
         
     }
     

@@ -69,5 +69,14 @@ public class StudentFees {
     public String toString() {
         return "";
     }
+    
+    public boolean isIsEnrolled(){
+        if (isEnrolled == true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
 }
