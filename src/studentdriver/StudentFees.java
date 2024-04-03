@@ -1,6 +1,6 @@
 package studentdriver;
 
-public class StudentFees {
+public abstract class StudentFees {
 
     private String studentName;
     private int studentID;
@@ -9,6 +9,9 @@ public class StudentFees {
     private double PER_CREFDIT_FEE = 543.50;
 
     public StudentFees(String studentName, int studentID, boolean isEnrolled) {
+        this.studentID = studentID;
+        this.studentName = studentName;
+        this.isEnrolled = isEnrolled;
 
     }
 
@@ -63,9 +66,10 @@ public class StudentFees {
     //get payable and tostring
 
     public double getPayableAmount() {
-        return 0.02 * 0.05;
+        return PER_CREFDIT_FEE * CREDITS_PER_COURSE;
     }
 
+    @Override
     public String toString() {
         return "";
     }
