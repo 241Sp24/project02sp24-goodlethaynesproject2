@@ -1,13 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package studentdriver;
 
-/**
- *
- * @author S541341
- */
-public class UGStudent {
+public class UGStudent extends StudentFees {
+    private double scholarshipAmount;
+    private int coursesEnrolled;
+    private boolean hasScholarship;
+    private double ADDITIONAL_FEE = 820.70;
     
+    public UGStudent(String studentName, int studentID, boolean isEnrolled, boolean hasScholarship, double scholarshipAmount, int coursesEnrolled){
+        super(studentName, studentID, isEnrolled);
+        this.hasScholarship = hasScholarship;
+        this.scholarshipAmount = scholarshipAmount;
+        this.coursesEnrolled = coursesEnrolled; 
+    }
+    
+    public boolean isHasScholarship(){
+        if (hasScholarship == true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public double getScholarshipAmount(){
+        return scholarshipAmount;
+    }
+    
+    public int getCoursesEnrolled(){
+        return coursesEnrolled;
+    }
+    
+    public double getPayableAmount(){
+        int coursesNum = getCoursesEnrolled();
+        return coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE();
+        
+    }
+    
+    public String toString(){
+        return "Student name: " + getStudentName() + "\nStudent id: " + getStudentID() + "\nEnrolled: " + isIsEnrolled() + "\nScholarship: " + isHasScholarship() + "\nScholarship amount: " + getScholarshipAmount() + "\nCourses enrolled: " + getCoursesEnrolled() + "\nPayable amount: " + getPayableAmount();
+    }
+       
 }
