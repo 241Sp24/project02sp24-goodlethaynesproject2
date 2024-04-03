@@ -14,7 +14,12 @@ public class UGStudent extends StudentFees {
     }
     
     public boolean isHasScholarship(){
-        
+        if (hasScholarship == true){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     public double getScholarshipAmount(){
@@ -26,11 +31,13 @@ public class UGStudent extends StudentFees {
     }
     
     public double getPayableAmount(){
+        int coursesNum = getCoursesEnrolled();
+        return coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE();
         
     }
     
     public String toString(){
-        
+        return "Student name: " + getStudentName() + "\nStudent id: " + getStudentID() + "\nEnrolled: " + isIsEnrolled() + "\nScholarship: " + isHasScholarship() + "\nScholarship amount: " + getScholarshipAmount() + "\nCourses enrolled: " + getCoursesEnrolled() + "\nPayable amount: " + getPayableAmount();
     }
        
 }
