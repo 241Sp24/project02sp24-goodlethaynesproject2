@@ -50,6 +50,10 @@ public abstract class StudentFees {
         this.isEnrolled = isEnrolled;
     }
 
+    public boolean getIsEnrolled() {
+        return isEnrolled;
+    }
+
     /**
      * @return the CREDITS_PER_COURSE
      */
@@ -71,7 +75,10 @@ public abstract class StudentFees {
 
     @Override
     public String toString() {
-        return "";
+        return "Student Name: " + getStudentName() + "\n Student id: " + getStudentID() + "\nEnrolled:" + getIsEnrolled()
+
+
+);
     }
 
 }
