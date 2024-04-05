@@ -48,6 +48,6 @@ public class GraduateStudent extends StudentFees{
     }
     
     public String toString(){
-        return "Student name: " + getStudentName() + "\nStudent id: " + getStudentID() + "\nEnrolled: " + isIsEnrolled() + "\nGraduate assistant: " + isIsGraduateAssistant() + "\nGraduate assistant type: " + graduateAssistantType + "\nCourses enroleld" + getCoursesEnrolled() + "\nPayable amount: " + getPayableAmount();
+        return super.toString() + "\nGraduate assistant: " + isIsGraduateAssistant() + "\nGraduate assistant type: " + graduateAssistantType + "\nCourses enroleld" + getCoursesEnrolled() + "\nPayable amount: " + getPayableAmount();
     }
 }
