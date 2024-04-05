@@ -80,5 +80,14 @@ public abstract class StudentFees {
 
 );
     }
+    
+    public boolean isIsEnrolled(){
+        if (isEnrolled == true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
 }
