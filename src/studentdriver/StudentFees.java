@@ -77,12 +77,11 @@ public abstract class StudentFees {
     public String toString() {
         return "Student Name: " + getStudentName() + "\n Student id: " + getStudentID() + "\nEnrolled:" + getIsEnrolled();
     }
-    
-    public boolean isIsEnrolled(){
-        if (isEnrolled == true){
+
+    public boolean isIsEnrolled() {
+        if (isEnrolled == true) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
