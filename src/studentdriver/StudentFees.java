@@ -75,10 +75,7 @@ public abstract class StudentFees {
 
     @Override
     public String toString() {
-        return "Student Name: " + getStudentName() + "\n Student id: " + getStudentID() + "\nEnrolled:" + getIsEnrolled()
-
-
-);
+        return "Student Name: " + getStudentName() + "\n Student id: " + getStudentID() + "\nEnrolled:" + getIsEnrolled();
     }
     
     public boolean isIsEnrolled(){
