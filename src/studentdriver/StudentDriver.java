@@ -27,21 +27,29 @@ public class StudentDriver {
             String[] lineSplit = line.split(",");
             if (i < numUG) {
                 int id = Integer.parseInt(lineSplit[0]);
-                //String name = String.parseString(lineSplit[1]);
-                //boolean isEnrolled = boolean.parse(lineSplit[]);
+                String name = lineSplit[1];
+                boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
                 int coursesEnrolled = Integer.parseInt(lineSplit[3]);
-                //boolean hasScholarship = boolean.parse(lineSplit[2]);
-                //Double scholarshipAmount = double.parse(lineSplit[]);
+                boolean hasScholarship = Boolean.parseBoolean(lineSplit[4]);
+                double scholarshipAmount = Double.parseDouble(lineSplit[5]);
+                UGStudent student = new UGStudent(id, name, isEnrolled, coursesEnrolled, hasScholarship, scholarshipAmount);
+                students[i] = student;
+                System.out.println("UGStudent \n" + student.toString());
             }
             if (i < numGS) {
                 int id = Integer.parseInt(lineSplit[0]);
-                //String name = String.parseString(lineSplit[1]);
-                //boolean isEnrolled = boolean.parse(lineSplit[]);
+                String name = lineSplit[1];
+                boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
+                int coursesEnrolled = Integer.parseInt(lineSplit[3]);
+                boolean isGraduateAssistant = Boolean.parseBoolean(lineSplit[4]);
+                String graduateAssistantType = lineSplit[5];
             }
             if (i < numOS) {
                 int id = Integer.parseInt(lineSplit[0]);
-                //String name = String.parseString(lineSplit[1]);
-                //boolean isEnrolled = boolean.parse(lineSplit[]);
+                String name = lineSplit[1];
+                boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
+                int coursesEnrolled = Integer.parseInt(lineSplit[3]);
+                int noOfMonths = Integer.parseInt(lineSplit[4]);
             }
             i++;
 
