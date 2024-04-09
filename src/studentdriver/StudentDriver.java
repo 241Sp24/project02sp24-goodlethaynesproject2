@@ -39,21 +39,25 @@ public class StudentDriver {
                 }
                 System.out.println("\nUGStudent \n" + student.toString());
             }
-            if (i < numGS && i > numUG) {
+            if (i >= numUG && i <= (numGS + 4)) {
                 int id = Integer.parseInt(lineSplit[0]);
                 String name = lineSplit[1];
                 boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
                 int coursesEnrolled = Integer.parseInt(lineSplit[3]);
                 boolean isGraduateAssistant = Boolean.parseBoolean(lineSplit[4]);
-                String graduateAssistantType = lineSplit[5];
-                GraduateStudent student = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, graduateAssistantType, coursesEnrolled);
+                String graduateAssistantType;
+                if (i != 6){
+                    graduateAssistantType = lineSplit[5];
+                    GraduateStudent student = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, graduateAssistantType, coursesEnrolled);
+                }
+                GraduateStudent student = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, coursesEnrolled);
                 students[i] = student;
                 if (i == 4){
                     System.out.println("\n**********Graduate students list**********");
                 }
-                System.out.println("\nGraduateStudent \n" + student.toString());
+                System.out.println("\nGraduateStudent \n" + student.toString() + "\n");
             }
-            if (i > numOS) {
+            if (i >= (numOS + 7)) {
                 int id = Integer.parseInt(lineSplit[0]);
                 String name = lineSplit[1];
                 boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
