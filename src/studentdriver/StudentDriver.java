@@ -34,6 +34,7 @@ public class StudentDriver {
                 double scholarshipAmount = Double.parseDouble(lineSplit[5]);
                 UGStudent student = new UGStudent(id, name, isEnrolled, coursesEnrolled, hasScholarship, scholarshipAmount);
                 students[i] = student;
+                System.out.println("\n**********Undergraduate students list**********");
                 System.out.println("UGStudent \n" + student.toString());
             }
             if (i < numGS) {
