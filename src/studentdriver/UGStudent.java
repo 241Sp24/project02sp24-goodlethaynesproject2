@@ -1,18 +1,20 @@
 package studentdriver;
 
 public class UGStudent extends StudentFees {
+//variables
 
     private double scholarshipAmount;
-
     private boolean hasScholarship;
     private double ADDITIONAL_FEE = 820.70;
 
     public UGStudent(int studentID, String studentName, boolean isEnrolled, int coursesEnrolled, boolean hasScholarship, double scholarshipAmount) {
+        //constructors
         super(studentName, studentID, isEnrolled, coursesEnrolled);
         this.hasScholarship = hasScholarship;
         this.scholarshipAmount = scholarshipAmount;
 
     }
+//has schlarship method
 
     public boolean isHasScholarship() {
         if (hasScholarship == true) {
@@ -21,10 +23,13 @@ public class UGStudent extends StudentFees {
             return false;
         }
     }
+//get and return scholarhsip amount
 
     public double getScholarshipAmount() {
         return scholarshipAmount;
     }
+//get payable amount = coursenum * creditpercourse * creditfee + otherfees
+    //and solves for amount using schoalrhip money
 
     @Override
     public double getPayableAmount() {
@@ -33,6 +38,7 @@ public class UGStudent extends StudentFees {
         return coursesFee - getScholarshipAmount();
 
     }
+// toString using student fee tostring for output
 
     @Override
     public String toString() {
