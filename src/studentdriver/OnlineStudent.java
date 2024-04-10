@@ -21,6 +21,6 @@ public class OnlineStudent extends StudentFees {
     //to string fro online student inherits student fees tostring
     @Override
     public String toString() {
-        return super.toString() + "\nNo of Months" + noOfMonths + "\nPayable Amount: " + getPayableAmount();
+        return super.toString() + "\nNo of Months: " + noOfMonths + "\nPayable Amount: " + getPayableAmount();
     }
 }
