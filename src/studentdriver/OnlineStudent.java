@@ -8,7 +8,7 @@ public class OnlineStudent extends StudentFees {
 
     public OnlineStudent(String studentName, int studentID, boolean isEnrolled, int noOfMonths) {
         //constructors
-        super(studentName, studentID, isEnrolled, coursesEnrolled);
+        super(studentName, studentID, isEnrolled);
         this.noOfMonths = noOfMonths;
     }
 

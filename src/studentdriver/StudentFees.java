@@ -17,6 +17,13 @@ public abstract class StudentFees {
 
     }
 
+    public StudentFees(String studentName, int studentID, boolean isEnrolled) {
+        this.studentID = studentID;
+        this.studentName = studentName;
+        this.isEnrolled = isEnrolled;
+
+    }
+
     public int getCoursesEnrolled() {
         return coursesEnrolled;
     }
