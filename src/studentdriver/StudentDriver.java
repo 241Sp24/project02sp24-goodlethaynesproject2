@@ -34,7 +34,7 @@ public class StudentDriver {
                 double scholarshipAmount = Double.parseDouble(lineSplit[5]);
                 UGStudent student = new UGStudent(id, name, isEnrolled, coursesEnrolled, hasScholarship, scholarshipAmount);
                 students[i] = student;
-                if (i == 0){
+                if (i == 0) {
                     System.out.println("\n**********Undergraduate students list**********");
                 }
                 System.out.println("\nUGStudent \n" + student.toString());
@@ -46,16 +46,16 @@ public class StudentDriver {
                 int coursesEnrolled = Integer.parseInt(lineSplit[3]);
                 boolean isGraduateAssistant = Boolean.parseBoolean(lineSplit[4]);
                 String graduateAssistantType;
-                if (i != 6){
-                    graduateAssistantType = lineSplit[5];
-                    GraduateStudent student = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, graduateAssistantType, coursesEnrolled);
-                }
-                GraduateStudent student = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, coursesEnrolled);
-                students[i] = student;
-                if (i == 4){
+
+                graduateAssistantType = lineSplit[5];
+                students[i] = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, graduateAssistantType, coursesEnrolled);
+
+                //GraduateStudent student = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, coursesEnrolled);
+                //students[i] = student;
+                if (i == 4) {
                     System.out.println("\n**********Graduate students list**********");
                 }
-                System.out.println("\nGraduateStudent \n" + student.toString() + "\n");
+                System.out.println("\nGraduateStudent \n" + students[i].toString() + "\n");
             }
             if (i >= (numOS + 7)) {
                 int id = Integer.parseInt(lineSplit[0]);
@@ -65,7 +65,7 @@ public class StudentDriver {
                 int noOfMonths = Integer.parseInt(lineSplit[4]);
                 OnlineStudent student = new OnlineStudent(name, id, isEnrolled, noOfMonths, coursesEnrolled);
                 students[i] = student;
-                if (i == 8){
+                if (i == 8) {
                     System.out.println("\n**********Online students list**********");
                 }
                 System.out.println("\nOnlineStudent \n" + student.toString());
