@@ -23,9 +23,12 @@ public class StudentDriver {
         int i = 0;
 
         while (inputf.hasNext()) {
+            //line split thing
             String line = inputf.nextLine();
+            //split by comma
             String[] lineSplit = line.split(",");
-            System.out.println(i);
+
+            //undergrad assignmnent and print
             if (i < numUG) {
                 int id = Integer.parseInt(lineSplit[0]);
                 String name = lineSplit[1];
@@ -36,12 +39,12 @@ public class StudentDriver {
                 students[i] = new UGStudent(id, name, isEnrolled, coursesEnrolled, hasScholarship, scholarshipAmount);
                 //students[i] = student;
                 if (i == 0) {
-                    System.out.println("\n**********Undergraduate students list**********");
+                    System.out.println("\n**********Undergraduate students list********** \n");
                 }
-                System.out.println("\nUGStudent \n" + students[i].toString());
-            }
+                System.out.println(students[i].toString() + "\n");
+            } //graduate assignment and print
             else if (i >= numUG && i < (numGS + numUG)) {
-                if (i == 4) {
+                if (i == 5) {
                     System.out.println("\n**********Graduate students list**********");
                 }
                 int id = Integer.parseInt(lineSplit[0]);
@@ -56,21 +59,23 @@ public class StudentDriver {
                 } else {
                     students[i] = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, coursesEnrolled);
                 }//students[i] = student;
-                System.out.println("\nGraduateStudent \n" + students[i].toString() + "\n");
-            }
-
+                System.out.println(students[i].toString() + "\n");
+            } //online student assignmnet and print
             else if (i >= (numOS + numGS) && i <= 12) {
                 if (i == 9) {
                     System.out.println("\n**********Online students list**********");
                 }
                 int id = Integer.parseInt(lineSplit[0]);
+                //name linesplit index 0
                 String name = lineSplit[1];
+                //is enrolled line split index 2
                 boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
                 //int coursesEnrolled = Integer.parseInt(lineSplit[3]);
                 int noOfMonths = Integer.parseInt(lineSplit[3]);
+                //assignarray to object
                 students[i] = new OnlineStudent(name, id, isEnrolled, noOfMonths);
-                //students[i] = student;
-                System.out.println("\nOnlineStudent \n" + students[i].toString() + "\n");
+                //print tostring
+                System.out.println(students[i].toString() + "\n");
             }
             i++;
 
