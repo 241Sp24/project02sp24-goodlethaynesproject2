@@ -47,14 +47,14 @@ public class GraduateStudent extends StudentFees {
         int coursesNum = getCoursesEnrolled();
 
         if (graduateAssistantType == null) {
-            return ADDITIONAL_FEES;
+            return 0.00;
         } else if (graduateAssistantType.equals("full")) {
             return ADDITIONAL_FEES;
         } else if (graduateAssistantType.equals("half")) {
-            double coursesFee = coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE() + ADDITIONAL_FEES;
-            return coursesFee / 2;
+            double coursesFee = (coursesNum * getCREDITS_PER_COURSE() * getPER_CREDIT_FEE() / 2) + ADDITIONAL_FEES;  
+            return coursesFee;
         } else {
-            double coursesFee = coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE() + ADDITIONAL_FEES;
+            double coursesFee = coursesNum * getCREDITS_PER_COURSE() * getPER_CREDIT_FEE() + ADDITIONAL_FEES;
             return coursesFee;
         }
     }

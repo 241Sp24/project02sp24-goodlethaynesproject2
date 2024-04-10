@@ -25,6 +25,7 @@ public class StudentDriver {
         while (inputf.hasNext()) {
             String line = inputf.nextLine();
             String[] lineSplit = line.split(",");
+            System.out.println(i);
             if (i < numUG) {
                 int id = Integer.parseInt(lineSplit[0]);
                 String name = lineSplit[1];
@@ -39,7 +40,10 @@ public class StudentDriver {
                 }
                 System.out.println("\nUGStudent \n" + students[i].toString());
             }
-            if (i >= numUG && i <= (numGS + numUG)) {
+            else if (i >= numUG && i < (numGS + numUG)) {
+                if (i == 4) {
+                    System.out.println("\n**********Graduate students list**********");
+                }
                 int id = Integer.parseInt(lineSplit[0]);
                 String name = lineSplit[1];
                 boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
@@ -52,23 +56,20 @@ public class StudentDriver {
                 } else {
                     students[i] = new GraduateStudent(name, id, isEnrolled, isGraduateAssistant, coursesEnrolled);
                 }//students[i] = student;
-                if (i == 4) {
-                    System.out.println("\n**********Graduate students list**********");
-                }
                 System.out.println("\nGraduateStudent \n" + students[i].toString() + "\n");
             }
 
-            if (i >= (numOS + numGS + 1) && i <= 12) {
+            else if (i >= (numOS + numGS) && i <= 12) {
+                if (i == 9) {
+                    System.out.println("\n**********Online students list**********");
+                }
                 int id = Integer.parseInt(lineSplit[0]);
                 String name = lineSplit[1];
                 boolean isEnrolled = Boolean.parseBoolean(lineSplit[2]);
-                int coursesEnrolled = Integer.parseInt(lineSplit[3]);
-                int noOfMonths = Integer.parseInt(lineSplit[4]);
-                students[i] = new OnlineStudent(name, id, isEnrolled, noOfMonths, coursesEnrolled);
+                //int coursesEnrolled = Integer.parseInt(lineSplit[3]);
+                int noOfMonths = Integer.parseInt(lineSplit[3]);
+                students[i] = new OnlineStudent(name, id, isEnrolled, noOfMonths);
                 //students[i] = student;
-                if (i == 8) {
-                    System.out.println("\n**********Online students list**********");
-                }
                 System.out.println("\nOnlineStudent \n" + students[i].toString() + "\n");
             }
             i++;

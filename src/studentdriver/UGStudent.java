@@ -34,8 +34,13 @@ public class UGStudent extends StudentFees {
     @Override
     public double getPayableAmount() {
         int coursesNum = getCoursesEnrolled();
-        double coursesFee = coursesNum * getCREDITS_PER_COURSE() * getPER_CREFDIT_FEE() + ADDITIONAL_FEE;
-        return coursesFee - getScholarshipAmount();
+        double coursesFee = coursesNum * getCREDITS_PER_COURSE() * getPER_CREDIT_FEE() + ADDITIONAL_FEE;
+        if (isIsEnrolled() == false) {
+            return 0.00;
+        }
+        else {
+            return coursesFee - getScholarshipAmount();
+        }
 
     }
 // toString using student fee tostring for output

@@ -70,7 +70,7 @@ public abstract class StudentFees {
     /**
      * @return the PER_CREFDIT_FEE
      */
-    public double getPER_CREFDIT_FEE() {
+    public double getPER_CREDIT_FEE() {
         return PER_CREFDIT_FEE;
     }
     //get payable and tostring
