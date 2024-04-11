@@ -146,9 +146,9 @@ public class StudentDriver {
     //Print out grad student details and calculate average
     System.out.println("\n**********Graduate Students details**********");
     gsAvg = gstotal / gscount;
-    System.out.printf("\nAverage Students fee: %.2f\nGraduate Assistantship count: " + gsAssistantshipCount + "\nTotal number of courses: " + gsTotalCourses, gsAvg);
+    System.out.printf("Average Students fee: %.2f\nGraduate Assistantship count: " + gsAssistantshipCount + "\nTotal number of courses: " + gsTotalCourses, gsAvg);
     //Print out online student details and calculate average
-    System.out.println("\n**********Online Students details**********");
+    System.out.println("\n\n**********Online Students details**********");
     osAvg = ostotal / oscount;
     System.out.printf("Average Students fee: %.2f", osAvg);
     }
