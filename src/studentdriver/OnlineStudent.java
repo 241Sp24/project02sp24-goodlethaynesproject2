@@ -5,9 +5,9 @@ public class OnlineStudent extends StudentFees {
     //variables
     private int noOfMonths;
     private double MONTHLY_FEE = 1245.25;
-
+    
+    //constructor
     public OnlineStudent(String studentName, int studentID, boolean isEnrolled, int noOfMonths) {
-        //constructors
         super(studentName, studentID, isEnrolled);
         this.noOfMonths = noOfMonths;
     }

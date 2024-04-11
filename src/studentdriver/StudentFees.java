@@ -1,14 +1,15 @@
 package studentdriver;
 
 public abstract class StudentFees {
-
+    //Instance variables
     private String studentName;
     private int studentID;
     private int coursesEnrolled;
     private boolean isEnrolled;
     private int CREDITS_PER_COURSE = 3;
     private double PER_CREFDIT_FEE = 543.50;
-
+    
+    //Constructor
     public StudentFees(String studentName, int studentID, boolean isEnrolled, int coursesEnrolled) {
         this.studentID = studentID;
         this.studentName = studentName;
@@ -16,7 +17,8 @@ public abstract class StudentFees {
         this.coursesEnrolled = coursesEnrolled;
 
     }
-
+    
+    //Constructor
     public StudentFees(String studentName, int studentID, boolean isEnrolled) {
         this.studentID = studentID;
         this.studentName = studentName;
@@ -24,6 +26,7 @@ public abstract class StudentFees {
 
     }
 
+    //Method to get courses enrolled
     public int getCoursesEnrolled() {
         return coursesEnrolled;
     }
@@ -62,7 +65,8 @@ public abstract class StudentFees {
     public void setIsEnrolled(boolean isEnrolled) {
         this.isEnrolled = isEnrolled;
     }
-
+    
+    //method to check if student is enrolled
     public boolean getIsEnrolled() {
         return isEnrolled;
     }
@@ -80,17 +84,19 @@ public abstract class StudentFees {
     public double getPER_CREDIT_FEE() {
         return PER_CREFDIT_FEE;
     }
-    //get payable and tostring
-
+    
+    //get payable amount
     public double getPayableAmount() {
         return PER_CREFDIT_FEE * CREDITS_PER_COURSE;
     }
-
+    
+    //toString method
     @Override
     public String toString() {
         return "Student Name: " + getStudentName() + "\nStudent id: " + getStudentID() + "\nEnrolled: " + getIsEnrolled();
     }
 
+    //Method to check if the student is enrolled
     public boolean isIsEnrolled() {
         if (isEnrolled == true) {
             return true;
